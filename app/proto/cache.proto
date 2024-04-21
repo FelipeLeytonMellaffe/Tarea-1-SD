@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+message JSONRequest {
+  string json_data = 1;
+}
+
+service Cache {
+  rpc SendJSON(JSONRequest) returns (JSONResponse) {}
+}
+
+message JSONResponse {
+  string message = 1;
+}

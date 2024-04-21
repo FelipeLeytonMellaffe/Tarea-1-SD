@@ -1,0 +1,20 @@
+# Dockerfile del Cliente (client/Dockerfile.grpc_client)
+
+FROM python:3.9
+
+WORKDIR /app
+
+# Copia el archivo de requisitos del cliente
+COPY . /app
+
+# Instala las dependencias del cliente
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copia el archivo del cliente
+#COPY client.py .
+
+# Copia los archivos protobuf
+#COPY cache_pb2.py .
+#COPY cache_pb2_grpc.py .
+
+CMD ["python", "client.py"]

@@ -1,0 +1,20 @@
+# Dockerfile del Servidor (server/Dockerfile.grpc_server)
+
+FROM python:3.9
+
+WORKDIR /app
+
+# Copia el archivo de requisitos del servidor
+COPY . /app
+
+# Instala las dependencias del servidor
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copia el archivo del servidor
+#COPY server.py .
+
+# Copia los archivos protobuf
+#COPY cache_pb2.py .
+#COPY cache_pb2_grpc.py .
+
+CMD ["python", "server.py"]
